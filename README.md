@@ -23,5 +23,6 @@ The system flow is as follows:
 
 ---
 
-## Connection Flow
 
+
+<img width="3000" height="1002" alt="circuit_image" src="https://github.com/user-attachments/assets/4ef41ef4-c8d2-44ea-ae51-684525820306" />
