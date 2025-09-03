@@ -1,14 +1,27 @@
-# UART-RS485-TEST
+# UART-RS485-TEST 
 
+This project demonstrates **UART communication** between Arduino Nanos and extends it to **RS485 transmission** for multi-device communication.  
 
-THIS IS ABOUT ATTEMPTING TO TOGGLE AN LED THROUGH UART AND RS485.
-1st STEP-Setting up the NANO(1) PUSHBUTTON and NANO(2) LED TOGETHER
-  |- this will deal with UART(RX/TX) TRANSMISSION between nano 1 and  nano 2. the pushbutton's pressed signal on nano 1 is sent through UART to nano 2 to light up the LED on nano 2.
-  |- the led 2 "ON" message is further sent forward to nano 3 through RS485(1) (connected to NANO(2)) to RS485(2) attatched onto NANO 3 which in turns "ON" the led at nano 3.
+The system flow is as follows:
 
+---
 
-NANO(1)--------NANO(2)-----RS485(1)----RS485(2)-----NANO(3)
- |               |                                    |  
-PUSHBUTTON      LED(1)                               LED(2)
+## System Overview
 
+1. **Nano (1)**  
+   - Pushbutton input.  
+   - When pressed, it sends a UART signal to **Nano (2)**.  
+
+2. **Nano (2)**  
+   - Receives UART data from **Nano (1)**.  
+   - Toggles **LED (1)** based on received data.  
+   - Forwards a message `"LED ON"` to **Nano (3)** via **RS485 (Module 1)**.  
+
+3. **Nano (3)**  
+   - Receives RS485 data from **Nano (2)** through **RS485 (Module 2)**.  
+   - Toggles **LED (2)** when the message is received.  
+
+---
+
+## Connection Flow
 
